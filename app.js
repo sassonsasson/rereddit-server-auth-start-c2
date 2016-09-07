@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/rereddit');
+mongoose.connect(process.env.'mongolab-convex-43069' || 'mongodb://localhost/rereddit');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -18,5 +19,6 @@ app.use('/', routes);
 app.use('/users', users); 
 
 var port = process.env.PORT || '4000';
+
 
 app.listen(port);
