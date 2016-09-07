@@ -1,9 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
- 
-var MONGOLAB_CYAN_URI = 'mongolab-convex-43069'
-mongoose.connect(process.env.MONGOLAB_CYAN_URI || 'mongodb://localhost/rereddit');
+
+
+var mongolab = 'mongolab-dimensional-56205'
+mongoose.connect('mongodb://localhost/rereddit');
+mongoose.connect(process.env.mongolab || 'mongodb://localhost/rereddit');
 
 
 var routes = require('./routes/index');
