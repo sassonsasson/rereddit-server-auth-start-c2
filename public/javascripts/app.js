@@ -23,5 +23,17 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
       }
     })
 
+    .state('register', {
+      url: '/register',
+      templateUrl: '/templates/register.html'
+    })
+
+    .state('logout', {
+      url: '/logout',
+      templateUrl: '/templates/logout.html',
+      controller: 'AuthCtrl'
+      
+    })
+
   $urlRouterProvider.otherwise('home');
 }]);
