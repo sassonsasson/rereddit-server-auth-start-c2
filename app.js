@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 
 
 var mongolab = 'mongolab-dimensional-56205'
-mongoose.connect('mongodb://localhost/rereddit');
 mongoose.connect(process.env.mongolab || 'mongodb://localhost/rereddit');
 
 
@@ -21,7 +20,7 @@ app.use(express.static(__dirname + '/node_modules'))
 app.use('/', routes);
 app.use('/users', users); 
 
-var port = process.env.PORT || '4000';
+var port = normalizePort(process.env.PORT || '4000');
 
 
 app.listen(port);
