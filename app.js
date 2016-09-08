@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/node_modules'))
 app.use('/', routes);
 app.use('/users', users); 
 
-var port = normalizePort(process.env.PORT || '4000');
+var port = process.env.PORT || '4000';
 
 
 app.listen(port);
